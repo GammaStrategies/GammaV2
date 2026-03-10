@@ -1,24 +1,34 @@
 # GammaV2
 
-GammaV2 is a reduced Foundry workspace that keeps only the MultiPositionManager stack from the original repository.
+GammaV2 is a Foundry workspace for the Gamma MultiPositionManager system on Uniswap v4.
 
-Included:
-- `src/MultiPositionManager` contracts, strategies, lenses, routers, and relayer/factory flow
-- MPM-only deployment and maintenance scripts in `script/`
-- Local MPM-focused test coverage in `test/`
+It includes the core manager contracts, supported strategies, periphery lenses, relayer flow, deployment scripts, and the associated test suite used to build and validate the stack.
 
-Excluded:
-- `src/LaunchPad`
-- `src/LimitOrderBook`
-- `src/Periphery`
-- `src/Unilaunch`
-- `src/MultiPositionManager/periphery/RelayerLens.sol`
-- `src/MultiPositionManager/interfaces/IRelayerLens.sol`
-- Fork, integration, and non-MPM tests
+## Repository Layout
 
-## Commands
+- `src/MultiPositionManager/`: core contracts, libraries, periphery contracts, and strategies
+- `script/`: deployment, initialization, maintenance, and verification scripts
+- `test/`: contract tests, strategy tests, lens tests, and supporting test utilities
+- `audits/`: third-party audit reports
+
+## Getting Started
 
 ```sh
 forge build --force
 forge test --force
 ```
+
+## Scripts
+
+The `script/` directory contains operational scripts for:
+
+- infrastructure deployment
+- MultiPositionManager and factory deployment
+- strategy deployment
+- relayer configuration
+- lens deployment
+- post-deployment maintenance and verification
+
+## Audit
+
+- [Gamma MultiPositionManager Audit Report](./audits/Gamma_Gamma_MultiPositionManager_report.pdf)
