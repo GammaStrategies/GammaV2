@@ -1,0 +1,26 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+
+# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+
+solc_version = '0.8.26'
+evm_version = "cancun"
+optimizer_runs = 800
+via_ir = false
+ffi = true
+
+# Higher gas limit for test setUp() which deploys many contracts in one tx
+# Production transactions stay under 30M (e.g., migrate() uses ~8.3M gas)
+gas_limit = "300000000"
+
+[rpc_endpoints]
+base = "${BASE_RPC_URL}"
+unichain = "https://0xrpc.io/uni"
+
+[etherscan]
+#base = { key = "${BASESCAN_API_KEY}" }
+#berachain = { key = "${BERACHAIN_API_KEY}", url = "${BERACHAIN_VERIFY_URL}", chain=80094}
+#sonic = { key = "${SONIC_API_KEY}", url = "${SONIC_VERIFY_URL}", chain=146}
+unichain = { key = "${UNICHAIN_API_KEY}", url = "${UNICHAIN_VERIFY_URL}", chain=130}
